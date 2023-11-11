@@ -10,7 +10,18 @@ class EcheanceController extends Controller
 {
     public function index()
     {
-         return $echeances = Echeance::paginate(75);
+         return $echeances = Echeance::orderBy('id','desc')->paginate(75);
 
     }
+
+    public function filterByDate(Request $request)
+    {
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        $echeances = Echeance::whereBetween('date_echeance', [$startDate, $endDate])->orderBy('id','desc')->paginate(75);
+
+        return $echeances;
+    }
+
 }
