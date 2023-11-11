@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Echeance extends Model
 {
     use HasFactory;
+
+    protected $table = "dbo.recouvrement";
 }
