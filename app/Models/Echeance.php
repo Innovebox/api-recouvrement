@@ -10,4 +10,11 @@ class Echeance extends Model
     use HasFactory;
 
     protected $table = "dbo.recouvrement";
+
+    public $timestamps = false;
+
+
+    protected $primaryKey = 'DR_No'; // or null
+
+    public $incrementing = false;
 }
