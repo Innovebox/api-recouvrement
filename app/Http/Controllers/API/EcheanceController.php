@@ -19,7 +19,7 @@ class EcheanceController extends Controller
         $startDate = $request->input('start_date');
         $endDate = $request->input('end_date');
 
-        $echeances = Echeance::whereBetween('DO_Date', [$startDate, $endDate])->orderBy('DR_No','desc')->paginate(100);
+        $echeances = Echeance::whereBetween('DO_Date', [$startDate, $endDate])->orderBy('DR_No','desc')->paginate(150);
 
         return $echeances;
     }
