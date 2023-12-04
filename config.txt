@@ -3,3 +3,6 @@ composer global require beyondcode/expose
 expose token c086a8d8-3758-4a05-96cb-def1f20365f4
 
 expose share http://127.0.0.1:8000
+
+expose share --subdomain=recouvrement --server=eu-1 http://127.0.0.1:8000
+
