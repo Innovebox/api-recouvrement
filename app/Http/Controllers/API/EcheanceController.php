@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 
 class EcheanceController extends Controller
 {
-    public function index()
+    public function index($date)
     {
-         return $echeances = Echeance::orderBy('DO_Date','desc')->orderBy('DO_Piece','DESC')->paginate(75);
+      
+      return  $echeances = Echeance::where('DO_Date', '>', $date)
+        ->orderBy('DO_Date', 'desc')
+        ->orderBy('DO_Piece', 'DESC')
+        ->paginate(75);
 
     }
 

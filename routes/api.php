@@ -18,6 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('echeances',[\App\Http\Controllers\API\EcheanceController::class,'index']);
+Route::get('echeances/{date_cloture}',[\App\Http\Controllers\API\EcheanceController::class,'index']);
 
 Route::get('echeances-filtre',[\App\Http\Controllers\API\EcheanceController::class,'filterByDate']);
