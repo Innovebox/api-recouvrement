@@ -18,6 +18,14 @@ class EcheanceController extends Controller
 
     }
 
+
+    public function show($id)
+    {
+      
+        $echeances = Echeance::where('DR_No', $id)->first();
+
+    }
+
     public function filterByDate(Request $request)
     {
         $startDate = $request->input('start_date');
