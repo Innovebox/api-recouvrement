@@ -8,20 +8,27 @@ use Illuminate\Http\Request;
 
 class EcheanceController extends Controller
 {
-    public function index($date)
+    public function version()
     {
-      
-      return  $echeances = Echeance::where('DO_Date', '>', $date)
+
+      return  'v1';
+
+    }
+
+   public function index($date)
+    {
+
+      return  $echeances = Echeance::whereNull('date_synchronisation')
         ->orderBy('DO_Date', 'desc')
         ->orderBy('DO_Piece', 'DESC')
-        ->paginate(75);
+        ->paginate(100);
 
     }
 
 
    public function show($id)
     {
-      
+
        return $echeances = Echeance::where('DR_No', $id)->first();
 
     }
