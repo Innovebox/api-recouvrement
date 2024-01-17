@@ -17,4 +17,12 @@ class Echeance extends Model
     protected $primaryKey = 'DR_No'; // or null
 
     public $incrementing = false;
+
+
+    public $fillable = [
+        'synchroniser',
+        'date_synchronisation' ,
+        'synchroniser_par' 
+    ];
+
 }
