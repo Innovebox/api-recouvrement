@@ -26,10 +26,24 @@ class EcheanceController extends Controller
     }
 
 
-   public function show($id)
+    public function show($id)
     {
 
-       return $echeances = Echeance::where('DR_No', $id)->first();
+        return $echeances = Echeance::where('DR_No', $id)->first();
+
+    }
+
+
+    public function update(Request $request)
+    {
+
+         $echeances = Echeance::where('DR_No', $request->id)->first();
+
+         $echeances->update([
+             'synchroniser' => 1,
+             'date_synchronisation' => now(),
+             'synchroniser_par' => $request->user_id,
+         ]);
 
     }
 
