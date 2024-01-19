@@ -47,6 +47,19 @@ class EcheanceController extends Controller
 
     }
 
+    public function updatevalide(Request $request)
+    {
+
+         $echeances = Echeance::where('DR_No', $request->id)->first();
+
+         $echeances->update([
+             'is_valide' => 1
+         ]);
+
+        return $echeances;
+
+    }
+
     public function filterByDate(Request $request)
     {
         $startDate = $request->input('start_date');

@@ -30,3 +30,5 @@ Route::get('echeances-filtre',[\App\Http\Controllers\API\EcheanceController::cla
 Route::get('echeances-valide',[\App\Http\Controllers\API\EcheanceController::class,'isvalide']);
 
 Route::put('echeances-update',[\App\Http\Controllers\API\EcheanceController::class,'update']);
+
+Route::put('updatevalide',[\App\Http\Controllers\API\EcheanceController::class,'updatevalide']);
