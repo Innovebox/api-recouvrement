@@ -59,7 +59,7 @@ class EcheanceController extends Controller
     public function isvalide(Request $request)
     {
 
-        $echeances = Echeance::where('is_valide', true)->orderBy('DO_Date','desc')->orderBy('DO_Piece','DESC')->get();
+        $echeances = Echeance::where('is_valide', true)->whereNull('date_synchronisation')->orderBy('DO_Date','desc')->orderBy('DO_Piece','DESC')->get();
 
         return $echeances;
     }
