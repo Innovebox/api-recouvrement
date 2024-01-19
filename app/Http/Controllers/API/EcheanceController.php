@@ -43,6 +43,7 @@ class EcheanceController extends Controller
              'synchroniser' => 1,
              'date_synchronisation' => now(),
              'synchroniser_par' => $request->user_id,
+              'is_valide' => 1
          ]);
 
     }
