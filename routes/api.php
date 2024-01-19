@@ -27,4 +27,6 @@ Route::get('echeances-show/{id}/',[\App\Http\Controllers\API\EcheanceController:
 
 Route::get('echeances-filtre',[\App\Http\Controllers\API\EcheanceController::class,'filterByDate']);
 
+Route::get('echeances-valide',[\App\Http\Controllers\API\EcheanceController::class,'isvalide']);
+
 Route::put('echeances-update',[\App\Http\Controllers\API\EcheanceController::class,'update']);

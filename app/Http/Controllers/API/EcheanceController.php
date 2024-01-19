@@ -56,5 +56,12 @@ class EcheanceController extends Controller
 
         return $echeances;
     }
+    public function isvalide(Request $request)
+    {
+
+        $echeances = Echeance::where('is_valide', true)->orderBy('DO_Date','desc')->orderBy('DO_Piece','DESC')->get();
+
+        return $echeances;
+    }
 
 }

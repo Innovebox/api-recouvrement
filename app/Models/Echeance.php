@@ -22,7 +22,13 @@ class Echeance extends Model
     public $fillable = [
         'synchroniser',
         'date_synchronisation' ,
-        'synchroniser_par' 
+        'synchroniser_par',
+        'is_valide',
     ];
+
+    protected $casts = [
+        'is_valide' => 'boolean'
+    ];
+
 
 }
