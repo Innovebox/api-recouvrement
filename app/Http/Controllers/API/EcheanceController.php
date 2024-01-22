@@ -26,10 +26,9 @@ class EcheanceController extends Controller
     }
 
 
-    public function show($id)
+    public function echeancesbyfacture($id)
     {
-
-        return $echeances = Echeance::where('DR_No', $id)->first();
+        return $echeances = Echeance::where('DO_Piece', $id)->get();
 
     }
 
