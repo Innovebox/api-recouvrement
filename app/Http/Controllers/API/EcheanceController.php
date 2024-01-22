@@ -70,13 +70,13 @@ class EcheanceController extends Controller
        public function updateObservation(Request $request)
     {
 
-         $echeances = Echeance::where('DR_No', $request->id)->first();
+        $echeances = Echeance::where('DO_Piece', $request->id)
+            ->update([
+                'observation' => $request->observation
+            ]);
 
-         $echeances->update([
-             'observation' => $request->observation
-         ]);
+        return "ok";
 
-        return $echeances;
     }
 
    public function updatevalideall(Request $request)
