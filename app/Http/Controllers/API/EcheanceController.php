@@ -60,19 +60,36 @@ class EcheanceController extends Controller
          $echeances = Echeance::where('DR_No', $request->id)->first();
 
          $echeances->update([
-             'is_valide' => 1
+             'is_valide' => 1,
+             'valider_par' => $request->user_id,
+             'valider_le' => now(),
          ]);
 
         return $echeances;
-
     }
+       public function updateObservation(Request $request)
+    {
+
+         $echeances = Echeance::where('DR_No', $request->id)->first();
+
+         $echeances->update([
+             'observation' => $request->observation
+         ]);
+
+        return $echeances;
+    }
+
    public function updatevalideall(Request $request)
     {
 
-         $echeances = Echeance::where('DO_Piece', $request->id)->update(['is_valide' => 1]);
+         $echeances = Echeance::where('DO_Piece', $request->id)
+             ->update([
+                 'is_valide' => 1,
+                 'valider_par' => $request->user_id,
+                 'valider_le' => now(),
+             ]);
 
         return "ok";
-
     }
 
     public function filterByDate(Request $request)

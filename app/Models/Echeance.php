@@ -24,6 +24,9 @@ class Echeance extends Model
         'date_synchronisation' ,
         'synchroniser_par',
         'is_valide',
+        'valider_par',
+        'valider_le',
+        'observation',
     ];
 
     protected $casts = [
