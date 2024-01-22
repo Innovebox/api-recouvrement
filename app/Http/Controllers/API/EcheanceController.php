@@ -66,6 +66,14 @@ class EcheanceController extends Controller
         return $echeances;
 
     }
+   public function updatevalideall(Request $request)
+    {
+
+         $echeances = Echeance::where('DO_Piece', $request->id)->update(['is_valide' => 1]);
+
+        return "ok";
+
+    }
 
     public function filterByDate(Request $request)
     {
