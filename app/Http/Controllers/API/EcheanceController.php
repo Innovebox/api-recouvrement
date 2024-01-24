@@ -19,9 +19,10 @@ class EcheanceController extends Controller
     {
 
       return  $echeances = Echeance::whereNull('date_synchronisation')
+      ->where('DO_Date', '>', $date)
         ->orderBy('DO_Date', 'desc')
         ->orderBy('DO_Piece', 'DESC')
-        ->paginate(100);
+        ->paginate(200);
 
     }
 
