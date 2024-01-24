@@ -55,6 +55,14 @@ class EcheanceController extends Controller
 
     }
 
+    public function delete(Request $request)
+    {
+
+         $echeances = Echeance::where('DR_No', $request->id)->first();
+
+         $echeances->delete();
+    }
+
     public function updatevalide(Request $request)
     {
 
