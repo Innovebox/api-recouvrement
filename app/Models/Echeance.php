@@ -27,6 +27,8 @@ class Echeance extends Model
         'valider_par',
         'valider_le',
         'observation',
+        'DR_Montant',
+        'DO_Piece'
     ];
 
     protected $casts = [
