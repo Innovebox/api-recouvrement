@@ -35,6 +35,8 @@ Route::put('echeances-delete',[\App\Http\Controllers\API\EcheanceController::cla
 
 Route::put('echeances-update',[\App\Http\Controllers\API\EcheanceController::class,'update']);
 
+Route::put('echeances-update-montant',[\App\Http\Controllers\API\EcheanceController::class,'update-montant']);
+
 Route::put('echeances-updateobservation',[\App\Http\Controllers\API\EcheanceController::class,'updateObservation']);
 
 Route::put('updatevalide',[\App\Http\Controllers\API\EcheanceController::class,'updatevalide']);

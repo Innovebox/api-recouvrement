@@ -55,6 +55,19 @@ class EcheanceController extends Controller
 
     }
 
+    public function updatemontant(Request $request)
+    {
+
+         $echeances = Echeance::where('DR_No', $request->id)->first();
+
+         $echeances->update([
+             'numero_facture' => $request->numero_facture,
+             'solde' => $request->montant
+         ]);
+
+    }
+
+
     public function delete(Request $request)
     {
 
