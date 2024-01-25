@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Echeance;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Log;
 class EcheanceController extends Controller
 {
     public function version()
@@ -90,7 +90,7 @@ class EcheanceController extends Controller
         public function deleteall(Request $request)
         {
             $echeanceIds = $request->input('id'); 
-
+            Log::error($echeanceIds);
             try {
               
                 Echeance::whereIn('DR_No', $echeanceIds)->delete();
