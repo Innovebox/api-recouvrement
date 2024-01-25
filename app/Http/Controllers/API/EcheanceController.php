@@ -90,15 +90,9 @@ class EcheanceController extends Controller
         public function deleteall(Request $request)
         {
             $echeanceIds = $request->input('id'); 
-            Log::error($echeanceIds);
-            try {
-              
-                Echeance::whereIn('DR_No', $echeanceIds)->delete();
 
-                return response()->json(['success n' => true]);
-            } catch (\Exception $e) {
-                return response()->json(['success n' => false, 'error' => $e->getMessage()], 500);
-            }
+            Log::error($echeanceIds);
+        
         }
 
 
