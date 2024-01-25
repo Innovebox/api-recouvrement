@@ -61,8 +61,8 @@ class EcheanceController extends Controller
          $echeances = Echeance::where('DR_No', $request->id)->first();
 
          $echeances->update([
-             'numero_facture' => $request->numero_facture,
-             'solde' => $request->solde
+             'DO_Piece' => $request->numero_facture,
+             'DR_Montant' => $request->montant
          ]);
 
     }
