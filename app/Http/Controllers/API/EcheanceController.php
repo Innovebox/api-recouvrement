@@ -90,7 +90,7 @@ class EcheanceController extends Controller
         public function deleteall(Request $request)
         {
             $echeanceIds = $request->input('id'); 
-
+             $echeanceIds = $request->all(); 
             Log::error($echeanceIds);
         
         }
