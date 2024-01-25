@@ -62,7 +62,7 @@ class EcheanceController extends Controller
 
          $echeances->update([
              'numero_facture' => $request->numero_facture,
-             'solde' => $request->montant
+             'solde' => $request->solde
          ]);
 
     }
