@@ -97,9 +97,9 @@ class EcheanceController extends Controller
               
                 Echeance::whereIn('DR_No', $echeanceIds)->delete();
 
-                return response()->json(['success n' => true]);
+                return response()->json(['success' => true]);
             } catch (\Exception $e) {
-                return response()->json(['success n' => false, 'error' => $e->getMessage()], 500);
+                return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
             }
         }
 
