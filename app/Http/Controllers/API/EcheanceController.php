@@ -92,7 +92,14 @@ class EcheanceController extends Controller
             $echeanceIds = $request->input('id'); 
              $echeanceIds = $request->all(); 
             Log::error($echeanceIds);
-        
+            try {
+              
+                Echeance::whereIn('DR_No', $echeanceIds)->delete();
+
+                return response()->json(['success n' => true]);
+            } catch (\Exception $e) {
+                return response()->json(['success n' => false, 'error' => $e->getMessage()], 500);
+            }
         }
 
 
