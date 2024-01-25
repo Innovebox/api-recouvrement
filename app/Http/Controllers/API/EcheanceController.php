@@ -22,7 +22,7 @@ class EcheanceController extends Controller
       ->where('DO_Date', '>', $date)
         ->orderBy('DO_Date', 'desc')
         ->orderBy('DO_Piece', 'DESC')
-        ->paginate(400);
+        ->paginate(350);
 
     }
 
