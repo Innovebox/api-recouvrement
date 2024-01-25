@@ -22,7 +22,7 @@ class EcheanceController extends Controller
       ->where('DO_Date', '>', $date)
         ->orderBy('DO_Date', 'desc')
         ->orderBy('DO_Piece', 'DESC')
-        ->paginate(350);
+        ->paginate(400);
 
     }
 
@@ -124,15 +124,6 @@ class EcheanceController extends Controller
         return "ok";
     }
 
-    public function filterByDate(Request $request)
-    {
-        $startDate = $request->input('start_date');
-        $endDate = $request->input('end_date');
-
-        $echeances = Echeance::whereNull('date_synchronisation')->whereBetween('DO_Date', [$startDate, $endDate])->orderBy('DO_Date','desc')->orderBy('DO_Piece','DESC')->get();
-
-        return $echeances;
-    }
     public function isvalide(Request $request)
     {
 
