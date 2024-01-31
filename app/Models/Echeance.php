@@ -32,7 +32,11 @@ class Echeance extends Model
     ];
 
     protected $casts = [
-        'is_valide' => 'boolean'
+        'date_synchronisation' => 'datetime',
+        'valider_le' => 'datetime',
+        'DR_Date' => 'datetime',
+        'DO_Date' => 'date',
+        'is_valide' => 'boolean',
     ];
 
 
