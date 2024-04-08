@@ -117,7 +117,10 @@ class EcheanceController extends Controller
 
         $echeances = Echeance::where('DO_Piece', $request->id)
             ->update([
-                'observation' => $request->observation
+                'observation' => $request->observation,
+                'matricule' => $request->matricule,
+                'prenom_nom' => $request->prenom_nom,
+                'telephone' => $request->telephone,
             ]);
 
         return "ok";
