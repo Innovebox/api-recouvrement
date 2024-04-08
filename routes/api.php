@@ -22,7 +22,6 @@ Route::get('/',[\App\Http\Controllers\API\EcheanceController::class,'version']);
 
 Route::get('echeances/{date_cloture}',[\App\Http\Controllers\API\EcheanceController::class,'index']);
 
-
 Route::get('echeances-show/{id}/',[\App\Http\Controllers\API\EcheanceController::class,'show']);
 
 Route::get('echeances-by-facture/{id}',[\App\Http\Controllers\API\EcheanceController::class,'echeancesbyfacture']);
@@ -44,3 +43,7 @@ Route::put('echeances-updateobservation',[\App\Http\Controllers\API\EcheanceCont
 Route::put('updatevalide',[\App\Http\Controllers\API\EcheanceController::class,'updatevalide']);
 
 Route::put('updatevalideall',[\App\Http\Controllers\API\EcheanceController::class,'updatevalideall']);
+
+
+Route::get('echeances-convention/{date_cloture}',[\App\Http\Controllers\API\EcheanceConventionController::class,'index']);
+

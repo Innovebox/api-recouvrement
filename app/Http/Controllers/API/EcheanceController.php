@@ -19,10 +19,11 @@ class EcheanceController extends Controller
     {
 
       return  $echeances = Echeance::whereNull('date_synchronisation')
-      ->where('DO_Date', '>', $date)
-        ->orderBy('DO_Date', 'desc')
-        ->orderBy('DO_Piece', 'DESC')
-        ->paginate(400);
+          ->where('CA_Num','!=','CONV0000')
+          ->where('DO_Date', '>', $date)
+          ->orderBy('DO_Date', 'desc')
+         ->orderBy('DO_Piece', 'DESC')
+         ->paginate(400);
 
     }
 
@@ -89,11 +90,11 @@ class EcheanceController extends Controller
 
         public function deleteall(Request $request)
         {
-            $echeanceIds = $request->input('id'); 
-             $echeanceIds = $request->all(); 
-                 $echeanceIds = array_values($request->all()); 
+            $echeanceIds = $request->input('id');
+             $echeanceIds = $request->all();
+                 $echeanceIds = array_values($request->all());
             Log::error($echeanceIds);
-            
+
         }
 
 
