@@ -28,7 +28,10 @@ class Echeance extends Model
         'valider_le',
         'observation',
         'DR_Montant',
-        'DO_Piece'
+        'DO_Piece',
+        'matricule',
+        'prenom_nom',
+        'telephone'
     ];
 
     protected $casts = [
