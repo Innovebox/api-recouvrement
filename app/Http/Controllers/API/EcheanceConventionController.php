@@ -15,7 +15,7 @@ class EcheanceConventionController extends Controller
 
         return  $echeances = Echeance::whereNull('date_synchronisation')
             ->where('CA_Num','CONV0000')
-            ->where('DO_Date', '>', "2023-04-19")
+            ->where('DO_Date', '>', "2024-04-19")
             ->orderBy('DO_Date', 'desc')
             ->orderBy('DO_Piece', 'DESC')
             ->paginate(400);
