@@ -44,6 +44,5 @@ Route::put('updatevalide',[\App\Http\Controllers\API\EcheanceController::class,'
 
 Route::put('updatevalideall',[\App\Http\Controllers\API\EcheanceController::class,'updatevalideall']);
 
-
-Route::get('echeances-convention/{date_cloture}',[\App\Http\Controllers\API\EcheanceConventionController::class,'index']);
+Route::get('echeances-convention',[\App\Http\Controllers\API\EcheanceConventionController::class,'index']);
 
