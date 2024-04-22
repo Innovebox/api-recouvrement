@@ -10,7 +10,7 @@ class EcheanceConventionController extends Controller
 {
 
 
-    public function index($date)
+    public function index()
     {
 
         return  $echeances = Echeance::whereNull('date_synchronisation')
