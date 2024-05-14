@@ -121,6 +121,7 @@ class EcheanceController extends Controller
                 'matricule' => $request->matricule,
                 'prenom_nom' => $request->prenom_nom,
                 'telephone' => $request->telephone,
+                'DR_Montant' => $request->solde,
             ]);
 
         return "ok";
