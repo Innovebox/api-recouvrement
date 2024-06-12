@@ -31,7 +31,9 @@ class Echeance extends Model
         'DO_Piece',
         'matricule',
         'prenom_nom',
-        'telephone'
+        'telephone',
+        'numero_recu',
+        'montant_recu'
     ];
 
     protected $casts = [
