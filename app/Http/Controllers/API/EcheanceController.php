@@ -73,9 +73,7 @@ class EcheanceController extends Controller
 
          $echeances->update([
              'DO_Piece' => $request->numero_facture,
-             'DR_Montant' => $request->montant,
-             'numero_recu' => $request->numero_recu,
-             'montant_recu' => $request->montant_recu
+             'DR_Montant' => $request->montant
          ]);
 
     }
