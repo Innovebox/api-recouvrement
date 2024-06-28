@@ -87,7 +87,9 @@ class EcheanceController extends Controller
              'DO_Piece' => $request->numero_facture,
              'DR_Montant' => $request->montant,
              'numero_recu' => $request->numero_recu,
-             'montant_recu' => $request->montant_recu
+             'montant_recu' => $request->montant_recu,
+             'prenom_nom' => $request->prenom_nom,
+             'is_recu' => 1
          ]);
 
          return "ok";

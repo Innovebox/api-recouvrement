@@ -33,7 +33,8 @@ class Echeance extends Model
         'prenom_nom',
         'telephone',
         'numero_recu',
-        'montant_recu'
+        'montant_recu',
+        'is_recu'
     ];
 
     protected $casts = [
@@ -42,6 +43,7 @@ class Echeance extends Model
         'DR_Date' => 'datetime',
         'DO_Date' => 'date',
         'is_valide' => 'boolean',
+        'is_recu' => 'boolean'
     ];
 
 
