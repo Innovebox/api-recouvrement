@@ -38,6 +38,8 @@ Route::put('echeances-update',[\App\Http\Controllers\API\EcheanceController::cla
 
 Route::put('echeances-update-montant',[\App\Http\Controllers\API\EcheanceController::class,'updatemontant']);
 
+Route::put('update-echeances-convention',[\App\Http\Controllers\API\EcheanceController::class,'updatemontantConvention']);
+
 Route::put('echeances-updateobservation',[\App\Http\Controllers\API\EcheanceController::class,'updateObservation']);
 
 Route::put('updatevalide',[\App\Http\Controllers\API\EcheanceController::class,'updatevalide']);
