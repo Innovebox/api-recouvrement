@@ -19,7 +19,7 @@ class EcheanceController extends Controller
     {
 
       return  $echeances = Echeance::whereNull('date_synchronisation')
-          ->where('CA_Num','!=','CONV0000')
+          ->whereIn('CA_Num', ['ATTENTEO', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000'])
           ->where('DO_Date', '>', $date)
           ->orderBy('DO_Date', 'desc')
          ->orderBy('DO_Piece', 'DESC')
@@ -34,9 +34,11 @@ class EcheanceController extends Controller
 
         $echeances = Echeance::whereNull('date_synchronisation')
             ->whereBetween('DO_Date', [$startDate, $endDate])
-            ->orderBy('DO_Date','desc')
-            ->where('CA_Num','!=','CONV0000')
-            ->orderBy('DO_Piece','DESC')->get();
+            ->whereIn('CA_Num', ['ATTENTEO', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000'])
+            ->orderBy('DO_Date', 'desc')
+            ->orderBy('DO_Piece', 'desc')
+            ->get();
+
 
         return $echeances;
     }
@@ -166,7 +168,7 @@ class EcheanceController extends Controller
     {
 
         $echeances = Echeance::where('is_valide', true)
-            ->where('CA_Num','!=','CONV0000')
+            ->whereIn('CA_Num', ['ATTENTEO', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000'])
             ->whereNull('date_synchronisation')
             ->orderBy('DO_Date','desc')
             ->orderBy('DO_Piece','DESC')->get();
