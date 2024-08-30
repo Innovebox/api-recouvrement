@@ -27,13 +27,14 @@ class EcheanceController extends Controller
 
     }
 
-    public function filterByDate(Request $request)
+    public function filterByDate(Request $request,$date)
     {
         $startDate = $request->input('start_date');
         $endDate = $request->input('end_date');
 
         $echeances = Echeance::whereNull('date_synchronisation')
             ->whereBetween('DO_Date', [$startDate, $endDate])
+            ->where('DO_Date', '>', $date)
             ->whereIn('CA_Num', ['ATTENTEO', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000'])
             ->orderBy('DO_Date', 'desc')
             ->orderBy('DO_Piece', 'desc')

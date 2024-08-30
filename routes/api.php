@@ -26,7 +26,7 @@ Route::get('echeances-show/{id}/',[\App\Http\Controllers\API\EcheanceController:
 
 Route::get('echeances-by-facture/{id}',[\App\Http\Controllers\API\EcheanceController::class,'echeancesbyfacture']);
 
-Route::get('echeances-filtre',[\App\Http\Controllers\API\EcheanceController::class,'filterByDate']);
+Route::get('echeances-filtre/{date_cloture}',[\App\Http\Controllers\API\EcheanceController::class,'filterByDate']);
 
 Route::get('echeances-valide',[\App\Http\Controllers\API\EcheanceController::class,'isvalide']);
 
