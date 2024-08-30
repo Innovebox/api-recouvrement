@@ -32,7 +32,11 @@ class EcheanceController extends Controller
         $startDate = $request->input('start_date');
         $endDate = $request->input('end_date');
 
-        $echeances = Echeance::whereNull('date_synchronisation')->whereBetween('DO_Date', [$startDate, $endDate])->orderBy('DO_Date','desc')->orderBy('DO_Piece','DESC')->get();
+        $echeances = Echeance::whereNull('date_synchronisation')
+            ->whereBetween('DO_Date', [$startDate, $endDate])
+            ->orderBy('DO_Date','desc')
+            ->where('CA_Num','!=','CONV0000')
+            ->orderBy('DO_Piece','DESC')->get();
 
         return $echeances;
     }
@@ -161,7 +165,11 @@ class EcheanceController extends Controller
     public function isvalide(Request $request)
     {
 
-        $echeances = Echeance::where('is_valide', true)->whereNull('date_synchronisation')->orderBy('DO_Date','desc')->orderBy('DO_Piece','DESC')->get();
+        $echeances = Echeance::where('is_valide', true)
+            ->where('CA_Num','!=','CONV0000')
+            ->whereNull('date_synchronisation')
+            ->orderBy('DO_Date','desc')
+            ->orderBy('DO_Piece','DESC')->get();
 
         return $echeances;
     }
