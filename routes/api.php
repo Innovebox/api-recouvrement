@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\FactureController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -48,3 +49,5 @@ Route::put('updatevalideall',[\App\Http\Controllers\API\EcheanceController::clas
 
 Route::get('echeances-convention',[\App\Http\Controllers\API\EcheanceConventionController::class,'index']);
 
+
+Route::post('factures', [FactureController::class, 'store']);
