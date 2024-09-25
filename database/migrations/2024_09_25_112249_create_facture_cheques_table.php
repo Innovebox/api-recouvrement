@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('NUM_PIECE');
             $table->string('NUM_FACT', 50)->nullable();
             $table->string('REF', 50)->nullable();
-            $table->bigInteger('CG_NUM');
+            $table->bigInteger('CG_NUM')->nullable();
             $table->string('CT_NUM', 20);
             $table->bigInteger('EC_MONTANT');
             $table->string('LIBELLE_ECRITURE', 100);
@@ -29,7 +29,6 @@ return new class extends Migration
             $table->bigInteger('TYPE_VERSEMENT');
             $table->boolean('VALIDE')->default(true);
             $table->boolean('insert')->default(false);
-            $table->bigInteger('CG_NUM')->nullable()->change();
             $table->timestamps();
         });
     }
