@@ -51,3 +51,4 @@ Route::get('echeances-convention',[\App\Http\Controllers\API\EcheanceConventionC
 
 
 Route::post('factures', [FactureController::class, 'store']);
+Route::post('factures-cheques', [FactureController::class, 'facturescheques']);
