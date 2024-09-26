@@ -41,6 +41,7 @@ class FactureController extends Controller
             'VALIDE' => 'boolean'
         ]);
 
+Log::error('data', ['data' => $validatedData]);
         // Création de la facture
         $facture = Facture::create($validatedData);
 

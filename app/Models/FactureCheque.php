@@ -9,7 +9,7 @@ class FactureCheque extends Model
 {
     use HasFactory;
 
-    protected $table = "facture_cheques";
+    protected $table = "dbo.facture_cheques";
     protected $fillable = [
         'CODE',
         'JM_DATE',
