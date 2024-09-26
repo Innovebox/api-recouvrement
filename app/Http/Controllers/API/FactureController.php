@@ -69,6 +69,7 @@ Log::error('data', ['data' => $request->all()]);
                     'VALIDE' => 'boolean'
                 ]);
 
+Log::error('data', ['data' => $request->all()]);
                 // Création de la facture
                 $facture = FactureCheque::create($validatedData);
 
