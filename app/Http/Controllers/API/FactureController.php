@@ -41,10 +41,19 @@ class FactureController extends Controller
             'VALIDE' => 'boolean'
         ]);
 
-Log::error('data', ['data' => $request->all()]);
+    Log::error('data', ['data' => $request->all()]);
         // Création de la facture
         $facture = Facture::create($validatedData);
 
+        if ($facture) {
+            // Log en cas de succès
+            Log::info('Facture créée avec succès', ['facture_id' => $facture->id]);
+            return response()->json($facture, 201);
+        } else {
+            // Log en cas d'échec
+            Log::error('Échec de la création de la facture', ['data' => $validatedData]);
+            return response()->json(['error' => 'Échec de la création de la facture'], 500);
+        }
         // Réponse JSON
         return response()->json($facture, 201);
     }
