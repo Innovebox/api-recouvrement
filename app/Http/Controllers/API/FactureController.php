@@ -69,7 +69,7 @@ class FactureController extends Controller
                     'NUM_PIECE' => 'required|integer',
                     'NUM_FACT' => 'nullable|string|max:50',
                     'REF' => 'nullable|string|max:50',
-                    //'CT_NUM' => 'required|string|max:20',
+                    'CT_NUM' => 'required|string|max:20',
                     'EC_MONTANT' => 'required|integer',
                     'LIBELLE_ECRITURE' => 'required|string|max:100',
                     'EC_SENS' => 'required|integer',
