@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('facture_cheques', function (Blueprint $table) {
-            $table->string('NUM_PIECE',13)->change();
             $table->string('CG_NUM',13)->nullable()->change();
         });
     }
