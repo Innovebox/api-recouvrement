@@ -20,6 +20,7 @@ class FactureCheque extends Model
         'REF',
         'CG_NUM',
         'CT_NUM',
+        'is_compte_generale',
         'EC_MONTANT',
         'LIBELLE_ECRITURE',
         'EC_SENS',
