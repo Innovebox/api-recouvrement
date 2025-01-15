@@ -37,7 +37,7 @@ class Echeance extends Model
         'is_recu',
           'entete1',
             'entete2',
-            'reference',
+            'reference2',
             'representant',
     ];
 

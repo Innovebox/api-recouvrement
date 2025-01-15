@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('echeances', function (Blueprint $table) {
             $table->string('entete1')->nullable();
             $table->string('entete2')->nullable();
-            $table->string('reference')->nullable();
+            $table->string('reference2')->nullable();
             $table->string('representant')->nullable();
         });
     }
@@ -27,7 +27,7 @@ return new class extends Migration
         Schema::table('echeances', function (Blueprint $table) {
             $table->dropColumn('entete1');
             $table->dropColumn('entete2');
-            $table->dropColumn('reference');
+            $table->dropColumn('reference2');
             $table->dropColumn('representant');
         });
     }
