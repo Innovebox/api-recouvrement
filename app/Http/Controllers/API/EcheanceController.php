@@ -19,7 +19,7 @@ class EcheanceController extends Controller
     {
 
       return  $echeances = Echeance::whereNull('date_synchronisation')
-          ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01','CONV0000'])
+          ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01'])
           ->where('DO_Date', '>', $date)
           ->orderBy('DO_Date', 'desc')
          ->orderBy('DO_Piece', 'DESC')
@@ -35,7 +35,7 @@ class EcheanceController extends Controller
         $echeances = Echeance::whereNull('date_synchronisation')
             ->whereBetween('DO_Date', [$startDate, $endDate])
             ->where('DO_Date', '>', $date)
-            ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01','CONV0000'])
+            ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01'])
             ->orderBy('DO_Date', 'desc')
             ->orderBy('DO_Piece', 'desc')
             ->get();
@@ -169,7 +169,7 @@ class EcheanceController extends Controller
     {
 
         $echeances = Echeance::where('is_valide', true)
-            ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01','CONV0000'])
+            ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01'])
             ->whereNull('date_synchronisation')
             ->orderBy('DO_Date','desc')
             ->orderBy('DO_Piece','DESC')->get();
