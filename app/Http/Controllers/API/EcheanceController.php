@@ -26,6 +26,34 @@ class EcheanceController extends Controller
          ->paginate(1000);
 
     }
+    public function indexconventions($date)
+    {
+
+      return  $echeances = Echeance::whereNull('date_synchronisation')
+          ->whereIn('CA_Num', ['CONV0000'])
+          ->where('DO_Date', '>', $date)
+          ->orderBy('DO_Date', 'desc')
+         ->orderBy('DO_Piece', 'DESC')
+         ->paginate(1000);
+
+    }
+
+    public function filterByDateconventions(Request $request,$date)
+    {
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        $echeances = Echeance::whereNull('date_synchronisation')
+            ->whereBetween('DO_Date', [$startDate, $endDate])
+            ->where('DO_Date', '>', $date)
+            ->whereIn('CA_Num', ['CONV0000'])
+            ->orderBy('DO_Date', 'desc')
+            ->orderBy('DO_Piece', 'desc')
+            ->get();
+
+
+        return $echeances;
+    }
 
     public function filterByDate(Request $request,$date)
     {
