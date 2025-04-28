@@ -14,4 +14,11 @@ class ClientAPIController extends Controller
 
         return response()->json($client);
     }
+
+    public function show($id)
+    {
+        $client = Client::where('id',$id)->first();
+
+        return response()->json($client);
+    }
 }

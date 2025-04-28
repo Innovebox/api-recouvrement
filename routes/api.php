@@ -53,6 +53,7 @@ Route::put('updatevalideall',[\App\Http\Controllers\API\EcheanceController::clas
 Route::get('echeances-convention',[\App\Http\Controllers\API\EcheanceConventionController::class,'index']);
 
 Route::get('clients',[\App\Http\Controllers\API\ClientAPIController::class,'index']);
+Route::get('clients/{id}',[\App\Http\Controllers\API\ClientAPIController::class,'show']);
 
 
 Route::post('factures', [FactureController::class, 'store']);
