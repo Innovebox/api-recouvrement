@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ClientAPIController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $client = Client::orderBy('CT_Num','DESC')->paginate(20);
 
