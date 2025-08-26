@@ -32,7 +32,7 @@ class ClientAPIController extends Controller
             }
 
             // Pagination
-            $perPage = $request->per_page ?? 20;
+            $perPage = $request->per_page ?? 10;
             $clients = $query->paginate($perPage);
 
             // Ajouter un indicateur que les résultats ont été filtrés

@@ -21,7 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/',[\App\Http\Controllers\API\EcheanceController::class,'version']);
 
-Route::get('echeances/{date_cloture}',[\App\Http\Controllers\API\EcheanceController::class,'index']);
+Route::get('echeances/{date_cloture}/{showrom}',[\App\Http\Controllers\API\EcheanceController::class,'index']);
+Route::get('echeances-filtre/{date_cloture}/{showrom}',[\App\Http\Controllers\API\EcheanceController::class,'filterByDate']);
+
 
 Route::get('echeances-conventions/{date_cloture}',[\App\Http\Controllers\API\EcheanceController::class,'indexconventions']);
 Route::get('echeances-conventions-filtre/{date_cloture}',[\App\Http\Controllers\API\EcheanceController::class,'filterByDateconventions']);
@@ -30,7 +32,6 @@ Route::get('echeances-show/{id}/',[\App\Http\Controllers\API\EcheanceController:
 
 Route::get('echeances-by-facture/{id}',[\App\Http\Controllers\API\EcheanceController::class,'echeancesbyfacture']);
 
-Route::get('echeances-filtre/{date_cloture}',[\App\Http\Controllers\API\EcheanceController::class,'filterByDate']);
 
 Route::get('echeances-valide',[\App\Http\Controllers\API\EcheanceController::class,'isvalide']);
 

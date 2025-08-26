@@ -35,10 +35,11 @@ class Echeance extends Model
         'numero_recu',
         'montant_recu',
         'is_recu',
-          'entete1',
-            'entete2',
-            'reference2',
-            'representant',
+        'entete1',
+        'entete2',
+        'reference2',
+        'representant',
+        'souche'
     ];
 
     protected $casts = [

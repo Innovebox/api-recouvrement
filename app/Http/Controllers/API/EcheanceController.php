@@ -15,12 +15,13 @@ class EcheanceController extends Controller
 
     }
 
-   public function index($date)
+   public function index($date,$showroom)
     {
 
       return  $echeances = Echeance::whereNull('date_synchronisation')
           ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01'])
           ->where('DO_Date', '>', $date)
+          ->where('souche', $showroom)
           ->orderBy('DO_Date', 'desc')
          ->orderBy('DO_Piece', 'DESC')
          ->paginate(1000);
@@ -55,7 +56,7 @@ class EcheanceController extends Controller
         return $echeances;
     }
 
-    public function filterByDate(Request $request,$date)
+    public function filterByDate(Request $request,$date,$showroom)
     {
         $startDate = $request->input('start_date');
         $endDate = $request->input('end_date');
@@ -63,6 +64,7 @@ class EcheanceController extends Controller
         $echeances = Echeance::whereNull('date_synchronisation')
             ->whereBetween('DO_Date', [$startDate, $endDate])
             ->where('DO_Date', '>', $date)
+            ->where('souche', $showroom)
             ->whereIn('CA_Num', ['ATTENTE0', 'DPTVENTE', 'NONPAYEE', 'PNL00000', 'RA000000','CADEAU00','NPGROS01'])
             ->orderBy('DO_Date', 'desc')
             ->orderBy('DO_Piece', 'desc')
